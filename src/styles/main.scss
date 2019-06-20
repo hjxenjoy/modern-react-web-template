@@ -1,0 +1,13 @@
+@import "variable";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: $text;
+  -webkit-font-smoothing: antialiased;
+}

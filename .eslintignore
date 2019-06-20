@@ -1,0 +1,7 @@
+public/
+scripts/
+config/
+node_modules/
+build/
+.*
+serviceWorker.js
