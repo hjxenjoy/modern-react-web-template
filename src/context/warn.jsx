@@ -10,9 +10,9 @@ export function useWarn() {
     throw new Error('useWarn must be used within a WarnContext.Provider')
   }
 
-  const { status, lost, prevent } = context
+  const { status, lost, prevent, reset } = context
 
-  return { status, lost, prevent }
+  return { status, lost, prevent, reset }
 }
 
 export default WarnContext

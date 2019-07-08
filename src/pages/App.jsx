@@ -1,5 +1,5 @@
 // libs
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
 
@@ -11,26 +11,30 @@ import Layout from '../layout'
 import { useEnv } from '../context'
 import WarnContext from '../context/warn'
 
-function useWarn() {
+function useWarnStatus() {
   const [status, setStatus] = useState()
 
-  function lost() {
+  const lost = useCallback(function lost() {
     setStatus(404)
-  }
+  }, [])
 
-  function prevent() {
+  const prevent = useCallback(function prevent() {
     setStatus(403)
-  }
+  }, [])
 
-  return [status, lost, prevent]
+  const reset = useCallback(function reset() {
+    setStatus()
+  }, [])
+
+  return [status, lost, prevent, reset]
 }
 
 function App() {
   const { projectPrefix } = useEnv()
-  const [status, lost, prevent] = useWarn()
+  const [status, lost, prevent, reset] = useWarnStatus()
 
   return (
-    <WarnContext.Provider value={{ status, lost, prevent }}>
+    <WarnContext.Provider value={{ status, lost, prevent, reset }}>
       <Router>
         <Layout>{renderRoutes(getRoutes(projectPrefix))}</Layout>
       </Router>

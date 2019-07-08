@@ -1,5 +1,6 @@
 // libs
-import React from 'react'
+import React, { useEffect } from 'react'
+import { withRouter } from 'react-router'
 
 // components
 import { useWarn } from '../context/warn'
@@ -8,8 +9,12 @@ const NotFound = React.lazy(() => import('../pages/NotFound'))
 const Forbidden = React.lazy(() => import('../pages/Forbidden'))
 
 function Layout(props) {
-  const { status } = useWarn()
+  const { status, reset } = useWarn()
   let content = props.children
+
+  useEffect(() => {
+    reset()
+  }, [props.location.pathname, reset])
 
   if (status === 403) {
     content = (
@@ -28,4 +33,4 @@ function Layout(props) {
   return content
 }
 
-export default Layout
+export default withRouter(Layout)
