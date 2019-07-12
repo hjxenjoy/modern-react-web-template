@@ -1,12 +1,31 @@
 {
   "name": "modern-react-web-template",
+  "description": "Modern React Web App Template",
   "version": "0.2.0",
-  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjxenjoy/modern-react-web-template.git"
+  },
+  "keywords": [
+    "react",
+    "creact-react-app",
+    "template",
+    "single page application"
+  ],
+  "author": "Jinxin Hu <hjxenjoy@gmail.com> (https://hujin.xin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hjxenjoy/modern-react-web-template/issues"
+  },
+  "homepage": "https://github.com/hjxenjoy/modern-react-web-template#readme",
+  "github": {
+    "release": true
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -66,6 +85,7 @@
     "lint-staged": "^8.2.1",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
+    "release-it": "^12.3.3",
     "sass": "^1.21.0",
     "typescript": "^3.5.2"
   }
