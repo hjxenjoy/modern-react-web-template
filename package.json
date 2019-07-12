@@ -28,6 +28,12 @@
   "github": {
     "release": true
   },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -74,6 +80,7 @@
     "react-scripts": "3.0.1"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^1.1.0",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
