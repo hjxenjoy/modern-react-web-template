@@ -2,12 +2,12 @@
 import React from 'react'
 
 // components
-import Head from '../../layout/Head'
+import { useTitle } from '../../context'
 
 function Home() {
+  useTitle('Home')
   return (
     <React.Fragment>
-      <Head title="Home" />
       <h1>Home Page.</h1>
     </React.Fragment>
   )

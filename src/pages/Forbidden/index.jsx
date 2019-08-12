@@ -3,17 +3,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // components
-import Head from '../../layout/Head'
-import { useEnv } from '../../context'
+import { useEnv, useTitle } from '../../context'
 
 // styles
 import styles from '../../styles/warn.module.scss'
 
 function Forbidden() {
   const { projectPrefix } = useEnv()
+  useTitle('403')
   return (
     <div className={styles.warn}>
-      <Head title="403" />
       <h2>403 Forbbiden</h2>
       <p>
         Back <Link to={`${projectPrefix}/`}>Home</Link>
